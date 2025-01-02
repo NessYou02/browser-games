@@ -1,26 +1,40 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+//import HangMan from './views/HangMan.vue';
+import Wordle from './views/Wordle.vue';
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name : "App",
+  components:{Wordle},
 }
 </script>
 
-<style>
+
+<template>
+    <main>
+      <!--
+            <HangMan/>  
+      -->
+      <Wordle/>  
+  </main>
+</template>
+
+
+<style  >
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #000000;
+  text-decoration: white;
+
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222831!important ;
+
+}
+
+
 </style>
