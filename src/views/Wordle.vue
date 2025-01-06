@@ -143,6 +143,11 @@ export default {
 
 <template>
  <div class="border border-dark rounded p-4 cont">
+  <!--Go to Hang Man-->
+    <button type="button" class="go-to-hangman mt-2  btn btn-lg ">
+      <RouterLink to="/Hangman" class="link">Go to Hangman</RouterLink>
+    </button>
+
   <!--Congrats Alert-->
     <div v-if="this.isWinner" class="alert alert-success center-block alert-dismissible fade show ps-2 pe-1 text-center" role="alert">
        <h2>
@@ -165,9 +170,9 @@ export default {
         <div  v-for="(cell,i) in row" :key="i" class="d-flex flex-row">
             <!--Cell-->
             <div id ="cell" class =" m-1 p-4 " :class="cell[1]" :style="{animationDelay: cell[2]}"  >
-            <h1 class="mb-0">
+            <h2 class="mb-1 strong letter">
               {{ cell[0] }}
-            </h1>
+            </h2>
             </div>
         </div>
     </div>
@@ -190,6 +195,24 @@ export default {
   width:25em
 
 }
+.link{
+  color: white;
+  text-decoration: none;
+}
+.go-to-hangman {
+  position: absolute;
+  left:80%;
+  top:5%;
+  background-color: #F6B17A;
+  border: 2px solid black;
+  color: var(--bs-btn-hover-color);
+
+}
+.go-to-hangman:hover {
+  color:white  ; 
+  background-color: #F6B17A;
+  border-color: var(--bs-btn-hover-border-color);
+}
 
 .cont{
   background-color: #31363F;
@@ -197,7 +220,6 @@ export default {
   font-family: 'Oswald', sans-serif !important;
   display: flex;
   flex-direction: column;
-
 }
 .guess{
   background-color: #76ABAE !important;
@@ -219,7 +241,7 @@ export default {
     
 
 }
-h1{
+.letter{
   color: #EEEEEE;
 }
 .correct-letter-well-placed{

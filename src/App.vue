@@ -1,20 +1,15 @@
 
 <script>
-//import HangMan from './views/HangMan.vue';
-import Wordle from './views/Wordle.vue';
 export default {
   name : "App",
-  components:{Wordle},
+  components:{},
 }
 </script>
 
 
 <template>
     <main>
-      <!--
-            <HangMan/>  
-      -->
-      <Wordle/>  
+      <RouterView />
   </main>
 </template>
 

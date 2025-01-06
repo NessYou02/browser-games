@@ -1,9 +1,11 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
-import HangMan from './views/HangMan.vue'
+import Wordle from './src/views/Wordle.vue'
+import HangMan from '@/views/HangMan.vue'
 
 const routes = [
-  { path: '/', component: HangMan },
+  { path: '/', component: Wordle },
+  { path: '/Hangman', component: HangMan },
 ]
 
 const router = createRouter({

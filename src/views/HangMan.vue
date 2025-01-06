@@ -63,6 +63,12 @@ export default {
     },
     tryAgain(){
       window.location.reload()
+    },
+    async getWord(){
+      const response = await fetch("https://random-word-api.herokuapp.com/word?length=7") 
+      const word = await response.json() || "word"
+      this.secret_text = word[0]
+
     }
 
 
@@ -77,10 +83,7 @@ export default {
   },
 
     async created () {
-  //  const response = await fetch("https://random-word-api.herokuapp.com/word") 
-    //const word = await response.json() || "word"
-//    this.secret_text = word[0]
-    this.secret_text = "Hello"
+      this.getWord() //    this.secret_text = "Hello"
 
   }
 
@@ -90,6 +93,11 @@ export default {
 
 <template>
  <div class="d-flex flex-column rounded p-4 cont">
+    <!--Go to Wordle-->
+    <button type="button" class="go-to-wordle mt-2  btn btn-lg ">
+      <RouterLink to="/" class="link">Go to Wordle</RouterLink>
+    </button>
+
     <div  v-if="this.secret_text">
 
         <!--Correct Guess-->
@@ -122,10 +130,13 @@ export default {
 
     <!--Input Form-->
       <div v-if="!(this.isGuessed|| this.isWrong)" class="d-flex input pt-3">
-        <div class="input-group input-group">
+        <div class="input-group input-group ">
           <input class="form-control border-dark" v-model="letter" maxlength="1" @keyup.enter="sendInput()" >
         </div>
-        <button  type="button " class=" ms-2 rounded btn border-dark btn-lg w-75 guess" @click="sendInput()">Guess a Letter</button>
+        <div class="btn-group w-75 " role="group" aria-label="Basic example">
+          <button  type="button " class=" ms-2 rounded btn border-dark btn-lg guess" @click="sendInput()">Guess a Letter</button>
+         <!-- <button  type="button " class=" ms-2 rounded btn border-dark btn-lg guess" @click="getWord()">Refresh</button> -->
+        </div>
       </div>
 
     <!--Dashes-->
@@ -152,6 +163,24 @@ export default {
 
 h2 {
   color: white;
+}
+.link{
+  color: white;
+  text-decoration: none;
+}
+.go-to-wordle {
+  position: absolute;
+  left:80%;
+  top:5%;
+  background-color: #F6B17A;
+  border: 2px solid black;
+  color: var(--bs-btn-hover-color);
+
+}
+.go-to-wordle:hover {
+  color:white  ; 
+  background-color: #F6B17A;
+  border-color: var(--bs-btn-hover-border-color);
 }
 
 .cont{
