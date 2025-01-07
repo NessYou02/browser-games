@@ -18,16 +18,20 @@ export default {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #000000;
-  text-decoration: white;
+  text-align: center;  
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 
 }
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #222831!important ;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 
 }
 

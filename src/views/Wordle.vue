@@ -188,11 +188,19 @@ export default {
 
 <style scoped >
 .alert{
-  position: absolute;
-  right: 35%;
-  top:30%;
-  height: 10em;
-  width:25em
+  position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    min-width: 500px;
+    min-height: 150px;
+    max-height: 30%;
+    max-width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
 
 }
 .link{
@@ -278,6 +286,57 @@ export default {
     transform: scaleY(1);
   }
   
+}
+
+
+
+/* Responsive design */
+@media screen and (max-width: 480px) {
+    #app {
+        padding: 10px;
+    }
+
+    .cont {
+        padding: 10px;
+    }
+
+    #cell {
+        width: 50px;
+        height: 50px;
+        margin: 2px; /* Smaller margins for mobile */
+    }
+
+    .d-flex.flex-row {
+        height: 54px; /* Adjusted for mobile */
+        margin-bottom: 6px;
+    }
+
+    .letter {
+        font-size: 1.5rem;
+    }
+
+    .go-to-hangman {
+        position: static;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #cell {
+        width: 40px;
+        height: 40px;
+        margin: 2px;
+    }
+
+    .d-flex.flex-row {
+        height: 44px; /* Adjusted for smaller mobile */
+        margin-bottom: 16px;
+
+    }
+
+    .letter {
+        font-size: 1.2rem;
+    }
 }
 
 </style>

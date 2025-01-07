@@ -33,3 +33,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - add congrats at the end of wordle
 - push code to a github repo  
 - deploy app 
+- fix deprecated keycode attribute
